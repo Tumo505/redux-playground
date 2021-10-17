@@ -16,3 +16,16 @@ const makeLargerRepeatThreeTimesAndEmbolden = compose(
 );
 
 console.log(makeLargerRepeatThreeTimesAndEmbolden("hey,"));
+
+// redux stores & reducers
+const initialState = {
+  value: 0
+};
+
+const reducer = (state, action) => {
+  return state;
+};
+// create a store
+const store = createStore(reducer);
+
+console.log(store);
