@@ -5,11 +5,14 @@ import {
   bindActionCreators
 } from "redux";
 
-const makeLouder = (string) => string.toUpperCase();
+const makeLarger = (string) => string.toUpperCase();
 const repeatThreeTimes = (string) => string.repeat(3);
 const embolden = (string) => string.bold();
 
-const makeLouderRepeatThreeTimesAndEmbolden = (string) =>
-  embolden(repeatThreeTimes(makeLouder(string)));
+const makeLargerRepeatThreeTimesAndEmbolden = compose(
+  embolden,
+  repeatThreeTimes,
+  makeLarger
+);
 
-console.log(makeLouderRepeatThreeTimesAndEmbolden("hello"));
+console.log(makeLargerRepeatThreeTimesAndEmbolden("hey,"));
